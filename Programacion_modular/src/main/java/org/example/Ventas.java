@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ventas {
+    static Scanner teclado = new Scanner(System.in);
+
     static void main() {
         double rec[] = new double[6];
 
@@ -21,7 +23,6 @@ public class Ventas {
 
     public static double[] datos (double rec[]){
 
-        Scanner teclado = new Scanner(System.in);
         boolean control = false;
 
         System.out.println("Introduce la recaudacion...");
