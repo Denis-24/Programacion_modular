@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class modo2_matriz_triangualr {
@@ -33,13 +34,45 @@ public class modo2_matriz_triangualr {
                 System.out.println();
             }
 
+            boolean control=true;
+            externo:
             for (int x = 0; x < tamanyo; x++) {
+                interno:
                 for (int y = 0; y < tamanyo; y++) {
                     if (x==y){
-                        
+                        int contador = x+1;
+                        while (contador<tamanyo){
+                            System.out.println(matriz[contador][y]);
+                            if (matriz[contador][y]!=0){
+                                control = false;
+                                break externo;
+                            }
+                            contador++;
+
+                        }
+                        if (!control){
+                            contador = y+1;
+                            while (contador<tamanyo){
+                                System.out.println(matriz[x][contador]);
+                                if (matriz[contador][y]!=0){
+                                    control = false;
+                                    break externo;
+                                }else{
+                                    control=true;
+                                }
+                                contador++;
+
+                            }
+                        }
+
                     }
                 }
 
+            }
+            if (control == true){
+                System.out.println("SI!");
+            }else if (control==false){
+                System.out.println("NO!");
             }
             return true;
         }
