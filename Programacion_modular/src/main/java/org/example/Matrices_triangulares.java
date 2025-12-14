@@ -69,6 +69,10 @@ public class Matrices_triangulares {
             }
 
         }
+
+        if (tamanyo == 1 && matriz[0][0]!=0){
+            control=false;
+        }
         return control;
     }
 
