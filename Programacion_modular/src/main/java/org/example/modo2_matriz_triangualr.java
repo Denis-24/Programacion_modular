@@ -27,12 +27,6 @@ public class modo2_matriz_triangualr {
 
                 }
             }
-            for (int linea[] : matriz){
-                for (int num : linea){
-                    System.out.print(num + " ");
-                }
-                System.out.println();
-            }
 
             boolean control=true;
             externo:
@@ -42,10 +36,8 @@ public class modo2_matriz_triangualr {
                     if (x==y){
                         int contador = x+1;
                         while (contador<tamanyo){
-                            System.out.println(matriz[contador][y]);
                             if (matriz[contador][y]!=0){
                                 control = false;
-                                break externo;
                             }
                             contador++;
 
@@ -53,8 +45,7 @@ public class modo2_matriz_triangualr {
                         if (!control){
                             contador = y+1;
                             while (contador<tamanyo){
-                                System.out.println(matriz[x][contador]);
-                                if (matriz[contador][y]!=0){
+                                if (matriz[x][contador]!=0){
                                     control = false;
                                     break externo;
                                 }else{
