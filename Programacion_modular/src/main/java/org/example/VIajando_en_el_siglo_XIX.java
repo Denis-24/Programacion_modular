@@ -20,14 +20,16 @@ public class VIajando_en_el_siglo_XIX {
         int total=0;
 
 
-        for (int x = 0; x < tamanyo; x++) {
-            System.out.println("fila " + x);
-            String fila[] =teclado.nextLine().split(" ");
-            for (int y = 0; y < 4; y++) {
+        for (int x = 0; x <tamanyo ; x++) {
+            for (int y = 0; y <tamanyo ; y++) {
+                String fila[] =teclado.next().split(" ");
+                for (String numero : fila){
+                    matriz[x][y]= Integer.parseInt(numero);
+                }
 
-                System.out.println(Arrays.toString(fila));
             }
         }
+
         for (int linea[] : matriz){
             for (int i = 0; i < linea.length; i++) {
                 if (!(linea[0] == 0)){
