@@ -54,7 +54,7 @@ public class Matrices_triangulares {
         return matriz;
     }
     public static boolean controlfilas(String[] fila){
-        
+
 
 
         return true;
