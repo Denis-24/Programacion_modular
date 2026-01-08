@@ -1,14 +1,13 @@
 package org.example;
 
 public class recursividad {
-static int limite=10;
+static int limite=100000;
 
 
     public static void main() {
-        int n=0;
-        do {
-            
-        }
+        imprimir(1);
+
+
     }
 
     public static void imprimir(int num){
