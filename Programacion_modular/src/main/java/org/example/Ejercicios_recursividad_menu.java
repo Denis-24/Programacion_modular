@@ -23,6 +23,8 @@ public class Ejercicios_recursividad_menu {
         System.out.println("5 - A binario");
         System.out.println("6 - Orden alfabetico");
         System.out.println("7 - Mostrar sumas");
+        System.out.println();
+        System.out.print("Opcion:");
 
         int operacion =teclado.nextInt();
 
@@ -40,15 +42,31 @@ public class Ejercicios_recursividad_menu {
                 System.out.println(potencias(numero,exponente));
                 break;
             case 3:
-                System.out.println("Introduce el numero");
-                int num=teclado.nextInt();
-                System.out.println(vuelta(num));
+                System.out.println("Que quiere invertir?");
+                System.out.println("Un numero (n) o  una frase (f)");
+                String respuesta=teclado.nextLine();
+                char r=respuesta.charAt(0);
+                if (r=='n'){
+                    System.out.println("Introduce el numero");
+                    int num=teclado.nextInt();
+                    vuelta_num(num);
+                } else if (r=='f') {
+                    System.out.println("Introduce una frase");
+                    char[] frase = teclado.next().toCharArray();
+                    vuelta_char(frase.length-1,frase);
+                }
                 break;
             case 4:
+                System.out.println("Introduce un numero...");
+                int bin = teclado.nextInt();
+                System.out.println(binario(bin));
 
                 break;
             case 5:
-
+                System.out.println("Introduce un numero...");
+                int a_bin = teclado.nextInt();
+                String bin_string= a_binario(a_bin);
+                System.out.println(bin_string);
                 break;
             case 6:
 
@@ -95,15 +113,51 @@ public class Ejercicios_recursividad_menu {
 
     }
 
-    public static int vuelta(int num){
+    public static void vuelta_num(int num){
         if (num < 10){
-            return 1;
+            System.out.println(num);;
         }else{
-            return 1+digitos(num%10);
+            System.out.println(num%10);
+            vuelta_num(num/10);
+
         }
     }
 
+    public static void vuelta_char(int posicion, char[] frase){
 
+        if (posicion>=0){
+            System.out.print(frase[posicion]);
+            vuelta_char(posicion-1, frase);
+        }
+
+    }
+
+    public static boolean binario(int bin) {
+
+        if (bin >= 10) {
+            if (bin % 10 == 0 || bin == 1) {
+                return binario(bin / 10);
+            } else {
+                return false;
+            }
+        } else{
+            if (bin == 0 || bin == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    public static String a_binario(int a_bin){
+
+        if (a_bin<=1){
+            return Integer.toString(a_bin);
+        }else{
+            return a_binario(a_bin/2)+a_bin%2;
+        }
+
+    }
 
 }
 
