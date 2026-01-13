@@ -5,28 +5,19 @@ import java.util.Scanner;
 public class Ejercicios_recursividad_menu {
 
     static Scanner teclado = new Scanner(System.in);
+    static int operacion = 0;
+    static int p=0;
 
 
     public static void main() {
-        menu();
+        p = preguntas();
+        menu(respuesta(p));
+        repetir();
 
 
     }
 
-    public static void menu(){
-        System.out.println("*** Bateria de ejercicios sobre recursividad ***");
-        System.out.println("Selecciona a continuacion el modo que quieras ejecutar...");
-        System.out.println("1 - Digitos");
-        System.out.println("2 - Potencias");
-        System.out.println("3 - Del Reves");
-        System.out.println("4 - Binario");
-        System.out.println("5 - A binario");
-        System.out.println("6 - Orden alfabetico");
-        System.out.println("7 - Mostrar sumas");
-        System.out.println();
-        System.out.print("Opcion:");
-
-        int operacion =teclado.nextInt();
+    public static void menu(int operacion){
 
         switch (operacion){
             case 1:
@@ -81,10 +72,13 @@ public class Ejercicios_recursividad_menu {
         }
 
         teclado.nextLine();
+    }
 
+    public static void repetir(){
         System.out.println();
         System.out.println("Elige una opcion:");
         System.out.println("[M] - Volver al menú principal");
+        System.out.println("[R] - Repetir");
         System.out.println("[X] - Salir");
 
 
@@ -93,10 +87,37 @@ public class Ejercicios_recursividad_menu {
         switch (resultado_max){
             case "M":
                 System.out.println();
-                menu();
+                preguntas();
+                menu(respuesta(preguntas()));
+                repetir();
+                break;
+            case "R":
+                menu(p);
+                repetir();
                 break;
         }
+    }
 
+    public static int preguntas(){
+        System.out.println("*** Bateria de ejercicios sobre recursividad ***");
+        System.out.println("Selecciona a continuacion el modo que quieras ejecutar...");
+        System.out.println("1 - Digitos");
+        System.out.println("2 - Potencias");
+        System.out.println("3 - Del Reves");
+        System.out.println("4 - Binario");
+        System.out.println("5 - A binario");
+        System.out.println("6 - Orden alfabetico");
+        System.out.println("7 - Mostrar sumas");
+        System.out.println();
+        System.out.print("Opcion:");
+
+        return operacion =teclado.nextInt();
+    }
+
+    public static int respuesta(int operacion){
+
+        int respuestas = operacion;
+        return operacion;
     }
 
     public static int digitos(int numero){
