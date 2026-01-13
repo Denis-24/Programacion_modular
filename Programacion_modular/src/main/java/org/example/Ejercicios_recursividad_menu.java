@@ -69,10 +69,14 @@ public class Ejercicios_recursividad_menu {
                 System.out.println(bin_string);
                 break;
             case 6:
-
+                System.out.println("Introduce una palabra");
+                String palabra= teclado.next();
+                orden_alfabetico(palabra);
                 break;
             case 7:
-
+                System.out.println("Introduce un numero");
+                int n= teclado.nextInt();
+                System.out.println(mostrar_suma(n));
                 break;
         }
 
@@ -88,6 +92,7 @@ public class Ejercicios_recursividad_menu {
         String resultado_max = resultado.toUpperCase();
         switch (resultado_max){
             case "M":
+                System.out.println();
                 menu();
                 break;
         }
@@ -159,5 +164,21 @@ public class Ejercicios_recursividad_menu {
 
     }
 
-}
+    public static boolean orden_alfabetico(String palabra){
 
+
+        return false;
+    }
+
+    public static int mostrar_suma(int n){
+
+        if (n==1){
+            return n;
+        }else{
+            return n+mostrar_suma(n-1);
+        }
+
+
+    }
+
+}
